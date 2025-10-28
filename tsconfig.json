@@ -23,6 +23,10 @@
     "strictTemplates": true
   },
   "files": [],
+  "exclude": [
+    "**/*.spec.ts",
+    "src/test.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.app.json"
