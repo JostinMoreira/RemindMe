@@ -14,14 +14,21 @@ module.exports = function (config) {
     },
 
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/remindme'),
+      dir: require('path').join(__dirname, './coverage'),
       subdir: '.',
       reporters: [{ type: 'html' }, { type: 'text-summary' }],
     },
 
     reporters: ['progress'],
 
-    browsers: ['ChromeHeadless'],
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable-gpu']
+      }
+    },
+
     singleRun: true,
     restartOnFileChange: false,
     autoWatch: false
