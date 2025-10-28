@@ -5,7 +5,9 @@ describe('App', () => {
   let app: App;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ declarations: [App] });
+    TestBed.configureTestingModule({ 
+      imports: [App] 
+    });
     app = TestBed.createComponent(App).componentInstance;
   });
 

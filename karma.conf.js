@@ -21,16 +21,22 @@ module.exports = function (config) {
 
     reporters: ['progress'],
 
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
     browsers: ['ChromeHeadlessNoSandbox'],
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox', '--disable-gpu']
+        flags: [
+          '--no-sandbox',
+          '--disable-gpu',
+          '--disable-dev-shm-usage'
+        ]
       }
     },
-
-    singleRun: true,
-    restartOnFileChange: false,
-    autoWatch: false
+    singleRun: false,
+    restartOnFileChange: true
   });
 };
