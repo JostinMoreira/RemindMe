@@ -1,4 +1,3 @@
-
 import 'zone.js';
 import 'zone.js/testing';
 
@@ -8,10 +7,15 @@ import {
   platformBrowserDynamicTesting,
 } from '@angular/platform-browser-dynamic/testing';
 
+declare global {
+  interface ImportMeta {
+    glob: (pattern: string, options?: { eager?: boolean }) => Record<string, unknown>;
+  }
+}
+
 getTestBed().initTestEnvironment(
   BrowserDynamicTestingModule,
-  platformBrowserDynamicTesting()
+  platformBrowserDynamicTesting(),
 );
 
-// Directly import the test files (esbuild/Angular builder doesn't provide `require.context`)
-import './app/app.spec';
+// No cargar specs manualmente; Karma los incluye vía tsconfig.spec.json

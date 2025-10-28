@@ -24,8 +24,7 @@
   },
   "files": [],
   "exclude": [
-    "**/*.spec.ts",
-    "src/test.ts"
+    "node_modules"
   ],
   "references": [
     {
